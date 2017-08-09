@@ -16,19 +16,17 @@ class ProductList extends Component {
         var that = this
         return this.props.products.map((product) => {
             return(
-                <div key={product.id} className="tile tile-grid-item tile-column-3">
-                    <div className="tile-inner-padded tile-grid-item-inner">
-                        <img src={product.img_url}/>
-                        <h3>{product.name}({product.type})</h3>
-                        <h5>$ {product.price}</h5>
-                        <h4>{product.discount}% off</h4>
-                        <button onClick={
-                            function(){
-                                return that.props.selectProduct(product)
-                            }}>
-                            Add to Cart
-                        </button>
-                    </div>
+                <div key={product.id}>
+                    <img src={product.img_url}/>
+                    <h3>{product.name}({product.type})</h3>
+                    <h5>$ {product.price}</h5>
+                    <h4>{product.discount}% off</h4>
+                    <button onClick={
+                        function(){
+                            return that.props.selectProduct(product)
+                        }}>
+                        Add to Cart
+                    </button>
                 </div>
             )
         })
